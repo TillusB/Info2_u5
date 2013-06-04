@@ -9,19 +9,33 @@ import java.util.Iterator;
  */
 public class MyIterator<T> implements Iterator<T> {
     private ListNode<T> pos;
+    private Kette<T> k;
+    
+    public MyIterator(Kette<T> k1){
+    	pos = null;
+    	k = k1;
+    }
     
     public void setPos(ListNode l){
-        this.pos=l;
+        this.pos = l;
     }
     
     @Override
     public boolean hasNext() {
-        return pos.getNext()!=null;
+    	if (pos == null)
+    		return k.length > 0;
+        return pos.getNext() != null;
     }
 
     @Override
         public T next() {
-        return pos.getNext().value();
+    	if(pos == null){
+    		pos = k.head;
+    		return k.head.value();
+    		
+    	}
+    	pos = pos.getNext();
+        return pos.value();
     }
 
     @Override

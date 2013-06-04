@@ -245,9 +245,9 @@ public class Kette<T> implements Liste<T> {
         int b = 2;
         int c = 3;
         Kette<Integer> kette = new Kette<Integer>();
-        kette.append(a);
-        kette.append(b);
-        kette.append(c);
+//        kette.append(a);
+//        kette.append(b);
+//        kette.append(c);
      //   System.out.println(kette.head.value());
         for(Object i : kette){
             System.out.println(i.toString());

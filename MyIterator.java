@@ -16,7 +16,7 @@ public class MyIterator<T> implements Iterator<T> {
     	k = k1;
     }
     
-    public void setPos(ListNode l){
+    public void setPos(ListNode<T> l){
         this.pos = l;
     }
     
